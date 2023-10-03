@@ -1,0 +1,190 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(45deg, #bd7dab, #8599bb, #d4ce46);
+  background-size: 200% 200%;
+  background-position: 0 100%;
+  animation: gradientColorChange 10s linear infinite;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: rotate3d 5s linear infinite;
+  perspective: 1000px; 
+}
+
+img {
+  max-width: 80%;
+  max-height: 80%;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.custom-text {
+  font-family: Hylia Serif Beta;
+  font-size: 30px;
+  text-align: center;
+  color: #824bc9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: neon-glow 2.5s ease-in-out infinite; 
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+      text-shadow: 0 0 15px #fcc8ff, 0 0 15px #fcc8ff, 0 0 15px #fcc8ff, 
+      0 0 15px #fcc8ff, 0 0 15px #fcc8ff, 0 0 15px #fcc8ff, 0 0 15px #fcc8ff;
+  }
+  50% {
+      text-shadow: none; 
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  opacity: 0.3;
+  animation: sparkle 2s infinite;
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes gradientColorChange {
+  0% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes sparkle {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+/* Triforce Symbol CSS */
+#triforce {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+#triangle {
+  content: '';
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 208px solid #FFBC00;
+}
+
+#triangle:before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 208px solid #FFBC00;
+  top: 208px;
+  left: -240px;
+}
+
+#triangle:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 208px solid #FFBC00;
+  top: 208px;
+}
+
+#shadow {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: relative;
+  z-index: -1;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 208px solid #FF8C00;
+  transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  top: 54px;
+  left: -146px;
+}
+
+#shadow:before {
+  content: '';
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 208px solid #FF8C00;
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+}
+
+#shadow:after {
+  content: '';
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 208px solid #FF8C00;
+  position: absolute;
+  display: block;
+  top: -208px;
+  left: 120px;
+}
+
